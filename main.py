@@ -5,7 +5,7 @@ class TransmissionSequence:
     def getMessage(self):
         return f"Voici le message : {self.message}"
 
-enteredMessage = input(str("Entrez un message a décodé : "))
+enteredMessage = input(str("Entrez un message a endécodé : "))
 
 messageCode = TransmissionSequence(message = enteredMessage)
 
