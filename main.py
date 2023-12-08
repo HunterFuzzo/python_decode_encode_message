@@ -10,6 +10,7 @@ enteredMessage = "bonjour coucou"
 
 print(TransmissionSequence(message = enteredMessage).getMessage())
 
+print(messageCode.getMessage())
 
 
 # Chaine de transmission 

@@ -72,3 +72,5 @@ if decoded_code[-(len(data)-1):] == [0] * (len(data) - 1):
     print("Le code CRC est le même")
 else:
     print("Le code CRC n'est pas le même")
+
+print("zebi")
