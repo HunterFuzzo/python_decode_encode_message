@@ -24,3 +24,9 @@ print(messageCode.getMessage())
 # ASK :
 # Modulation ASK
 # Démodulation ASK
+
+"""
+Vous prendrez un exemple de message simple (un seul caractère ASCII)
+pour montrer l'ensemble des transformations nécessaires pour réaliser
+son envoi puis sa reconstruction à la réception.
+"""
