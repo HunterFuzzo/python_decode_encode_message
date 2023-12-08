@@ -10,7 +10,7 @@ enteredMessage = input(str("Entrez un message a endécodé : "))
 messageCode = TransmissionSequence(message = enteredMessage)
 
 print(messageCode.getMessage())
-
+#BLBLBBLB
 
 # Chaine de transmission
 # Méthode de conversion ASCII
