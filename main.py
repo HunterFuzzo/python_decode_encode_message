@@ -5,14 +5,14 @@ class TransmissionSequence:
     def getMessage(self):
         return f"Voici le message : {self.message}"
 
-enteredMessage = input(str("Entrez un message a endécodé : "))
-
-messageCode = TransmissionSequence(message = enteredMessage)
-
-print(messageCode.getMessage())
+enteredMessage = "bonjour coucou"
 
 
-# Chaine de transmission
+print(TransmissionSequence(message = enteredMessage).getMessage())
+
+
+
+# Chaine de transmission 
 # Méthode de conversion ASCII
 # CAN/CNA
 # CRC : 
