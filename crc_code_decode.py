@@ -15,10 +15,10 @@ def crc_encode(data, divisor):
     return data + data_extended[-(len(data)-1):] # data + CRC
 
 # Exemple d'utilisation
-#data = [1, 1, 0, 1, 1]  # Séquence de données
-#divisor = [1, 0, 1, 1]  # Polynôme générateur (diviseur)
+# data = [1, 1, 0, 1, 1]  # Séquence de données
+# divisor = [1, 0, 1, 1]  # Polynôme générateur (diviseur)
 
-#print(crc_encode(data, divisor))
+# print(crc_encode(data, divisor))
 
 
 def crc_decode(data, divisor):
@@ -34,13 +34,10 @@ def crc_decode(data, divisor):
             for j in range(len(divisor)):
                 data_extended[i + j] = xor(data_extended[i + j], divisor[j])
 
-    # Renvoie les données étendues (bits de redondance ajoutés)
-    return data + data_extended[-(len(data)-1):]
+    final_data = data + data_extended[-(len(data)-1):]
+    if final_data[-(len(data)-1):] == [0] * (len(data) - 1):
+        return data
+    else:
+        print("error during decoding...")
 
 #print(crc_decode(data, divisor))
-
-
-# if decoded_code[-(len(data)-1):] == [0] * (len(data) - 1):
-#     print("Le code CRC est le même")
-# else:
-#     print("Le code CRC n'est pas le même")

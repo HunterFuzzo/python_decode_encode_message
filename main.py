@@ -20,27 +20,30 @@ class Decode:
     def __init__(self, message):
         self.message = message
 
+    def crcDecode(self):
+        return crc_decode(self.message, [1, 0, 1, 1]) # choose divisor
+
+    def binaryDecode(self):
+        return binary_to_ascii(self.crcDecode())
+
     def asciiDecode(self):
         return ascii_to_text(self.binaryDecode())
     
-    def binaryDecode(self):
-        return binary_to_ascii(self.crcEncode())
-    
-    def crcEncode(self):
-        return crc_encode([0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 1, 1]) # choose divisor
-
-
 messageToEncode = "Bonjour"
+messageToDecode = [0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 originalMessage = Encode(message = messageToEncode)
-#encodedMessage = Decode(message = [0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+encodedMessage = Decode(message = messageToDecode)
 
-print(f"Message : {messageToEncode}")
-print(f"Message to Ascii : {originalMessage.asciiEncode()}")
-print(f"Ascii to binary : {originalMessage.binaryEncode()}")
-print(f"Binary to crc : {originalMessage.crcEncode()}")
+# print(f"Message : {messageToEncode}")
+# print(f"Message to Ascii : {originalMessage.asciiEncode()}")
+# print(f"Ascii to binary : {originalMessage.binaryEncode()}")
+# print(f"Binary to crc : {originalMessage.crcEncode()}")
 
-#print(f"Message decoded in asii to text : {encodedMessage.crcDecode()}")
+print(f"Crc to binary : {encodedMessage.crcDecode()}")
+print(f"Binary to ascii : {encodedMessage.binaryDecode()}")
+print(f"Ascii to text : {encodedMessage.asciiDecode()}")
+
+
 
 # etc ...
-
 # can't do  decode now cuz it's the opposite and we need to finish the whole shit
