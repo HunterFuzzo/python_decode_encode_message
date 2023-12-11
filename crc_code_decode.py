@@ -13,7 +13,7 @@ def crc_encode(data, divisor):
         if data_extended[i] == 1:
             print(f"Iteration {i + 1}:")
             print("  Avant XOR :", data_extended)
-            
+
             # XOR des données étendues avec le diviseur
             for j in range(len(divisor)):
                 data_extended[i + j] = xor(data_extended[i + j], divisor[j])
