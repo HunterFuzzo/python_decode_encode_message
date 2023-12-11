@@ -1,8 +1,11 @@
-class TransmissionSequence:
+from crc_code_decode import *
+from ascii_code_decode import *
+
+class Encode:
     def __init__(self, message):
         self.message = message
     
-    def getMessage(self):
+    def encodeMessage(self):
         return f"Voici le message : {self.message}"
 
 enteredMessage = "bonjour coucou"
