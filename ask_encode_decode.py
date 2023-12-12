@@ -50,7 +50,6 @@ def manchester_to_ask(M):
 
 
 def ask_to_manchester(M):
-
     Fe = 44100                            
     Fp = 2000                            
 
@@ -87,10 +86,11 @@ def ask_to_manchester(M):
         if Res[ii] <= 0:
             message_demodule_ASK.extend([int(0)])
 
-    # print("Le message binaire envoyé est : \n ", M)
-    # print("Le message binaire démodulé est : \n ", message_demodule_ASK)
-
     Erreur = []
     Erreur = (np.array(M)==np.array(message_demodule_ASK))
-    # print ("Erreur de réception :\n", Erreur)
+
+    for i in range(len(Erreur)):
+        if Erreur[i] == False:
+            return f"Une erreur est survenue lors de la reception : {Erreur}"
+
     return M
