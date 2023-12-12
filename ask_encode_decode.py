@@ -48,7 +48,6 @@ def manchester_to_ask(M):
     # plt.show()
     return M
 
-
 def ask_to_manchester(M):
     Fe = 44100                            
     Fp = 2000                            
@@ -86,7 +85,6 @@ def ask_to_manchester(M):
         if Res[ii] <= 0:
             message_demodule_ASK.extend([int(0)])
 
-    Erreur = []
     Erreur = (np.array(M)==np.array(message_demodule_ASK))
 
     for i in range(len(Erreur)):

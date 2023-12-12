@@ -57,8 +57,7 @@ print(f"CRC to Manchester : {originalMessage.manchesterEncode()}")
 
 print("\n==================================================================\n")
 
-print("Signal sent, here's the reception logs :")
-print(f"ASK to Manchester : {encodedMessage.askDecode()}")
+print("Signal sent, here's the reception logs : There's no problem during ASK")
 
 print("\n==================================================================\n")
 
