@@ -67,10 +67,9 @@ def ask_to_manchester(M):
 
     ASK = M_duplique*Porteuse
 
-    S = Porteuse
-    Produit= ASK*S
+    Produit= ASK*Porteuse
 
-    Res= []                        
+    Res = []                        
 
     for i in range(0,N,Ns):
         Res.append(np.trapz(Produit[i:i+Ns]))
