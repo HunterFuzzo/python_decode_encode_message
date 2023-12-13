@@ -16,7 +16,7 @@ class Encoded:
         return ascii_to_binary(self.asciiEncode())
     
     def crcEncode(self):
-        return crc_encode(self.binaryEncode(), [1, 0, 1, 1])  # choose divisor
+        return crc_encode(self.binaryEncode(), data)  # choose divisor
     
     def manchesterEncode(self):
         return crc_to_manchester(self.crcEncode())
@@ -35,7 +35,7 @@ class Decoded:
         return manchester_to_crc(self.askDecode())
 
     def crcDecode(self):
-        return crc_decode(self.manchesterDecode(), [1, 0, 1, 1])  # choose divisor
+        return crc_decode(self.manchesterDecode(), data)  # choose divisor
 
     def binaryDecode(self):
         return binary_to_ascii(self.crcDecode())
@@ -51,7 +51,6 @@ def main():
 
     print(f"\nMessage: {messageToEncode}")
     print(f"Message to ASCII: {originalMessage.asciiEncode()}")
-    print(f"Message to CRC: {originalMessage.crcEncode()}")
     print(f"ASCII to binary: {originalMessage.binaryEncode()}")
     print(f"Binary to CRC: {originalMessage.crcEncode()}")
     print(f"CRC to Manchester: {originalMessage.manchesterEncode()}")
