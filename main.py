@@ -19,7 +19,7 @@ class Encoded:
         return crc_encode(self.binaryEncode(), [1, 0, 1, 1])  # choose divisor
     
     def manchesterEncode(self):
-        return convertManchester(self.crcEncode())
+        return crc_to_manchester(self.crcEncode())
     
     def askEncode(self):
         return manchester_to_ask(self.manchesterEncode())
@@ -32,7 +32,7 @@ class Decoded:
         return ask_to_manchester(self.message)
 
     def manchesterDecode(self):
-        return convertManchester(self.askDecode())
+        return manchester_to_crc(self.askDecode())
 
     def crcDecode(self):
         return crc_decode(self.manchesterDecode(), [1, 0, 1, 1])  # choose divisor
