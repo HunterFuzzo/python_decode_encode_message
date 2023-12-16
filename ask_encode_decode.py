@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+"""
+    Cette fonction convertit une séquence de bits (M) en modulation d'amplitude par déplacement d'amplitude (ASK).
+    
+    @param M: Liste de bits à moduler (0 ou 1)
+    @return: La séquence originale M
+"""
 def manchester_to_ask(M): 
     Fe = 44100                            
     Fp = 2000                            
@@ -48,6 +53,12 @@ def manchester_to_ask(M):
     # plt.show()
     return M
 
+""" 
+Cette fonction convertit une séquence modulée en ASK en une séquence de bits à l'aide de la démodulation.
+    
+    @param M: Séquence modulée en ASK
+    @return: La séquence originale M
+"""
 def ask_to_manchester(M):
     Fe = 44100                            
     Fp = 2000                            
